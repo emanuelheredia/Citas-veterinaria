@@ -1,35 +1,54 @@
 import React from "react";
 
-const Pacientes = () => {
+const Pacientes = ({ paciente, setPaciente, eliminarPaciente }) => {
 	return (
-		<div className="m-3 bg-white shadow-md px-5 py-10 rounded-xl">
+		<div className="mx-5 mb-10 bg-white shadow-md px-5 py-10 rounded-xl">
 			<p className="font-bold mb-3 uppercase text-gray-700">
-				Nombre: <span className="font-normal normal-case ">Hook</span>
+				Nombre:{" "}
+				<span className="font-normal normal-case ">
+					{paciente.nombre}
+				</span>
 			</p>
 			<p className="font-bold mb-3 uppercase text-gray-700">
 				Propietario:{" "}
-				<span className="font-normal normal-case ">Emanuel</span>
+				<span className="font-normal normal-case ">
+					{paciente.propietario}
+				</span>
 			</p>
 			<p className="font-bold mb-3 uppercase text-gray-700">
 				Email:{" "}
 				<span className="font-normal normal-case ">
-					correo@correo.com
+					{paciente.email}
 				</span>
 			</p>
 			<p className="font-bold mb-3 uppercase text-gray-700">
 				Fecha Alta:{" "}
-				<span className="font-normal normal-case ">10/12/22</span>
+				<span className="font-normal normal-case ">
+					{paciente.fecha}
+				</span>
 			</p>
 			<p className="font-bold mb-3 uppercase text-gray-700">
 				Síntomas:{" "}
 				<span className="font-normal normal-case ">
-					Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-					Iusto dolorem laudantium quibusdam officiis fugiat.
-					Repellendus placeat dolore esse adipisci, eos ducimus nulla
-					nisi repudiandae harum cupiditate dignissimos architecto id
-					ratione.
+					{paciente.sintomas}
 				</span>
 			</p>
+			<div className="flex justify-between mt-10 ">
+				<button
+					type="button"
+					className="py-2 px-10 rounded-lg uppercase bg-indigo-600 hover:bg-indigo-700 text-white font-bold"
+					onClick={() => setPaciente(paciente)}
+				>
+					Editar
+				</button>
+				<button
+					type="button"
+					className="py-2 px-10 rounded-lg uppercase bg-red-600 hover:bg-red-700 text-white font-bold"
+					onClick={() => eliminarPaciente(paciente.id)}
+				>
+					Eliminar
+				</button>
+			</div>
 		</div>
 	);
 };
