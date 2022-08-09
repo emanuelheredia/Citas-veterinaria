@@ -1,6 +1,14 @@
 import React from "react";
 
 const Pacientes = ({ paciente, setPaciente, eliminarPaciente }) => {
+	const handleEliminar = () => {
+		const respuesta = confirm(
+			"Estas seguro que deseas eliminar este Paciente?",
+		);
+		if (respuesta) {
+			eliminarPaciente(paciente.id);
+		}
+	};
 	return (
 		<div className="mx-5 mb-10 bg-white shadow-md px-5 py-10 rounded-xl">
 			<p className="font-bold mb-3 uppercase text-gray-700">
@@ -44,7 +52,7 @@ const Pacientes = ({ paciente, setPaciente, eliminarPaciente }) => {
 				<button
 					type="button"
 					className="py-2 px-10 rounded-lg uppercase bg-red-600 hover:bg-red-700 text-white font-bold"
-					onClick={() => eliminarPaciente(paciente.id)}
+					onClick={handleEliminar}
 				>
 					Eliminar
 				</button>

@@ -156,7 +156,7 @@ const Formulario = ({ pacientes, setPacientes, paciente, setPaciente }) => {
 						Sintomas
 					</label>
 					<textarea
-						className="mt-2 w-full p-3"
+						className="mt-2 w-full p-3 h-20"
 						id="sintomas"
 						cols="30"
 						rows="10"
